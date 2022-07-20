@@ -68,7 +68,7 @@ function CurlNavigation {
     DbName=${db_name[${1}]}
     DbTable=${db_table[${1}]}
     DbUser="monitor"
-    DbPasswd="moniotr"
+    DbPasswd="monitor"
 
     CurlData=$(/usr/bin/curl -m 22 -o /dev/null -k -s -w  "HTTP %{http_code} DNS %{time_namelookup} \ 
     CONNECT %{time_connect} SSL %{time_appconnect} Pretransfer %{time_pretransfer} \ 
