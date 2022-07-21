@@ -101,8 +101,7 @@ for f02 in {1..60}
 do
     for f01 in {0..1}
     do
-        # echo ${dst_header[$f01]}
-        CurlNavigation $f01
+        CurlNavigation $f01 &
         sleep 0.01
     done
     sleep 1
