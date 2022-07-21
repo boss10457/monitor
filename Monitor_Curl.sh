@@ -88,7 +88,7 @@ function CurlNavigation {
 
 for f02 in {1..60}
 do
-    for f01 in {0..1}
+    for ((f01=0 ; f01 < ${#dst_url[@]} ; f01++))
     do
         CurlNavigation $f01 &
         sleep 0.01
