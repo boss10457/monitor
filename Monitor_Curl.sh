@@ -2,53 +2,43 @@
 #array format ,  [var name] =([data1] [data2])
 
 src_host=(
-    SZ_172.17.2.39
-    SZ_172.26.2.39
+    GCP_10.4.255.12
 )
 
 dst_ip=(
-    172.17.157.57
-    172.26.75.35
+    192.168.142.65
 )
 
 dst_url=(
-    http://172.17.157.57/health
-    http://172.26.75.35/health
+    http://192.168.142.65/api/single_wallet/health
 )
 
 dst_header=(
-    "host:google.com"
-    "host"
+    "host:bb.durian"
 )
 
 dst_path=(
-    SZ_L2_BridegeF5_RD5
-    SZ_L2_IplWeb35
+    GCP_XPN1_RD5F5_RD5SingleVM_HTTP_192.168.142.65
 )
 
 db_host=(
-    172.16.2.32
-    172.16.2.32
+    10.4.255.11
 )
 
 db_name=(
-    monitor
-    monitor
+    monitor_srv
 )
 
 db_table=(
-    test_db_table
-    test_db_table
+    monitor_curl_xpn
 )
 
 cfg_ignore=(
-    on
     off
 )
 
 cfg_ignore_ms=(
-    0.1
-    0.2
+    0.025
 )
 
 function CurlNavigation {
@@ -92,8 +82,7 @@ function CurlNavigation {
     fi
 
     #Send to InfluxDB
-    /usr/bin/curl -o /dev/null -s -i -XPOST "http://$DbHost:8086/write?db=$DbName" -u $DbUser:$DbPasswd --data-binary "$DbTable,src=$SrcHost,dst_ip=$DstIp,dst_url=$DstUrl,http_code=$HttpCode HttpCode=$HttpCode,DnsTime=$DnsTime,ConnectTime=$ConnectTime,SslTime=$SslTime,ServerResponseTime=$ServerResponseTime,DataTransferTime=$DataTransferTime,TotalTime=$TotalTime $GetTimeStamp" & > /dev/null 2>&1
-    # /usr/bin/curl -o /dev/null -s -i -XPOST "http://$DbHost:8086/write?db=$DbName" -u $DbUser:$DbPasswd --data-binary "$DbTable,src=$SrcHost,dst_ip=$DstIp,dst_url=$DstUrl,http_code=$HttpCode HttpCode=$HttpCode,DnsTime=$DnsTime,ConnectTime=$ConnectTime,SslTime=$SslTime,ServerResponseTime=$ServerResponseTime,DataTransferTime=$DataTransferTime,TotalTime=$TotalTime $GetTimeStamp" & > /dev/null 2>&1
+    /usr/bin/curl -o /dev/null -s -i -XPOST "http://$DbHost:8086/write?db=$DbName" -u $DbUser:$DbPasswd --data-binary "$DbTable,src=$SrcHost,dst_ip=$DstIp,dst_url=$DstUrl,dst_path=$DstPath,http_code=$HttpCode HttpCode=$HttpCode,DnsTime=$DnsTime,ConnectTime=$ConnectTime,SslTime=$SslTime,ServerResponseTime=$ServerResponseTime,DataTransferTime=$DataTransferTime,TotalTime=$TotalTime $GetTimeStamp" & > /dev/null 2>&1
 
 }
 
