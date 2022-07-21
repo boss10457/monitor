@@ -24,7 +24,7 @@ dst_header=(
 dst_path=(
     SZ_L2_BridegeF5_RD5
     SZ_L2_IplWeb35
-    )
+)
 
 db_host=(
     172.16.2.32
