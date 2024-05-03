@@ -2,27 +2,27 @@
 #array format ,  [var name] =([data1] [data2])
 
 src_host=(
-    GCP_10.4.255.12
+    Container_01
 )
 
 dst_ip=(
-    192.168.142.65
+    8.8.8.8
 )
 
 dst_url=(
-    http://192.168.142.65/api/single_wallet/health
+    https://google.com.tw
 )
 
 dst_header=(
-    "host:bb.durian"
+    ""
 )
 
 dst_path=(
-    GCP_XPN1_RD5F5_RD5SingleVM_HTTP_192.168.142.65
+    Container_01
 )
 
 db_host=(
-    10.4.255.11
+    127.0.0.1
 )
 
 db_name=(
@@ -30,7 +30,7 @@ db_name=(
 )
 
 db_table=(
-    monitor_curl_xpn
+    monitor_srv
 )
 
 cfg_ignore=(
