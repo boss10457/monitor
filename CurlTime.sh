@@ -12,10 +12,10 @@ TotalTime=$(echo $CurlData | awk '{print $14}')
 
 
 echo ''
-echo HTTP %{HttpCode}
-echo DNS %{DnsTime}
-echo CONNECT %{ConnectTime}
-echo SSL %{SslTime}
-echo Pretransfer %{ServerResponseTime}
-echo Starttransfer %{DataTransferTime}
-echo TOTAL %{TotalTime}
+echo HTTP ${HttpCode}
+echo DNS ${DnsTime}
+echo CONNECT ${ConnectTime}
+echo SSL ${SslTime}
+echo Pretransfer ${ServerResponseTime}
+echo Starttransfer ${DataTransferTime}
+echo TOTAL ${TotalTime}
